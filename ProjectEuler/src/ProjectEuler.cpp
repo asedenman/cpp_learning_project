@@ -3,8 +3,8 @@
 
 #include "stdafx.h"
 #include "ProjectEuler.h"
-#include "WindowBase.h"
-#include "ProblemWindow.h"
+#include "windows/WindowBase.h"
+#include "windows//ProblemWindow.h"
 
 #define MAX_LOADSTRING 100
 #define PROBLEM_RANGE_START 1300

@@ -1,7 +1,7 @@
 #pragma once
 #include "WindowBase.h"
 #include <string>
-#include "ProblemManager.h"
+#include "../problems/ProblemManager.h"
 
 class ProblemWindow :
     public WindowBase

@@ -25,7 +25,7 @@ std::wstring ProblemManager::answer_to_prob(int problem_id, std::vector<long lon
 
 /**
  * \brief 
- * \param pID Problem number from ProjectEuler Website - never less than 0
+ * \param pID Problem number  - never less than 0
  * \return True if there is a problem with that id
  */
 bool ProblemManager::problem_exists(int pID) const
@@ -35,7 +35,7 @@ bool ProblemManager::problem_exists(int pID) const
 
 /**
  * \brief 
- * \param pID The problem number from projecteuler website  - never less than 0
+ * \param pID The problem number  - never less than 0
  * \return 0 if no problem found
  */
 int ProblemManager::num_problem_params(int pID) const

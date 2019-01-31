@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "Prob15.cpp"
-#include "Prob2.cpp"
-#include "Prob233.cpp"
+#include "src/problems/Prob233.cpp"
+#include "src/problems/Prob2.cpp"
+#include "src/problems/Prob15.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

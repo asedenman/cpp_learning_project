@@ -11,7 +11,7 @@ public:
 	~Prob2() = default;
 
 
-   std::wstring solve(const std::vector<long long>& params) override;
+   std::wstring solve(const std::vector<long long>& new_params) override;
 
     static unsigned long long SumOfFibonnaciNumsLessThan(int max_num);
 

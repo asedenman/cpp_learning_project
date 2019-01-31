@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Prob233.h"
-#include "resource.h"
 #include <unordered_map>
+#include "../../Resource.h"
 
 
 Prob233::Prob233() : Prob_base(IDS_PROB233_EXP)

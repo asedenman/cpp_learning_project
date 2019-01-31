@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "ProblemWindow.h"
-#include "Prob15.h"
 #include <commctrl.h>
 #include <winuser.h>
 #include <cassert>

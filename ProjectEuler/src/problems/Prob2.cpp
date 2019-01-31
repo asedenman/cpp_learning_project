@@ -1,32 +1,26 @@
 #include "stdafx.h"
 #include "Prob2.h"
-#include "Resource.h"
+#include "../../Resource.h"
 
 
 
 
-Prob2::Prob2() : ProblemBase(IDS_PROB2_EXP, 1)
+Prob2::Prob2() : Prob_base(IDS_PROB2_EXP)
 {
-    Params.emplace_back(TEXT("max num"), 4000000);
+    prob_params.emplace_back(TEXT("max num"), 4000000);
 }
-
-
-Prob2::~Prob2()
-{
-}
-
 
 
 /**
  * \brief 
- * \param params : length 1: max value for fibonacci numbers to sum
+ * \param new_params : length 1: max value for fibonacci numbers to sum
  * \return 
  */
-std::wstring Prob2::Solve(const std::vector<int>& params)
+std::wstring Prob2::solve(const std::vector<long long>& new_params)
 {
-    SetParams(params);
+    set_params(new_params);
 
-    unsigned int max_value = Params[0].Value;
+    const unsigned long long max_value = prob_params[0].value;
 
     return TEXT("Answer = ") + std::to_wstring(SumOfFibonnaciNumsLessThan(max_value));
 
@@ -46,11 +40,9 @@ unsigned long long Prob2::SumOfFibonnaciNumsLessThan(int max_num)
     // Basic iterative approach
     unsigned long long sum = 0;
 
-    unsigned int c = 0;
-
     while (true)
     {
-        c = a + b;
+        auto c = a + b;
         if (c > max_num)
         {
             break;

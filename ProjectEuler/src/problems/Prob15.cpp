@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Prob15.h"
 #include <unordered_map>
-#include "resource.h"
+#include "../../Resource.h"
 
 
 Prob15::Prob15() : Prob_base(IDS_PROB15_EXP)
