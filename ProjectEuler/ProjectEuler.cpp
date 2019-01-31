@@ -3,13 +3,18 @@
 
 #include "stdafx.h"
 #include "ProjectEuler.h"
+#include "WindowBase.h"
+#include "ProblemWindow.h"
 
 #define MAX_LOADSTRING 100
+#define PROBLEM_RANGE_START 1300
+//#define UNICODE
 
 // Global Variables:
-HINSTANCE hInst;                                // current instance
+HINSTANCE g_hInst;                              // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
+
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -95,7 +100,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   hInst = hInstance; // Store instance handle in our global variable
+   g_hInst = hInstance; // Store instance handle in our global variable
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
@@ -123,16 +128,27 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    static HWND problemWinHandle;
+    RECT rct;
     switch (message)
     {
+
+	case WM_CREATE:
+	    {
+            GetClientRect(hWnd, &rct);
+	        problemWinHandle = (ProblemWindow::Create(g_hInst, hWnd, (HMENU)10, 1,1, (rct.right), (rct.bottom)))->GetHWND();
+            
+	        break;
+	    }
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
+
             // Parse the menu selections:
             switch (wmId)
             {
             case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+                DialogBox(g_hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
                 break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);
@@ -147,8 +163,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: Add any drawing code that uses hdc here...
+
             EndPaint(hWnd, &ps);
         }
+        break;
+	case WM_SIZE:
+        //SendMessage(problemWinHandle, message, wParam, lParam);
+        MoveWindow(problemWinHandle, 0, 0, LOWORD(lParam), HIWORD(lParam), false);
         break;
     case WM_DESTROY:
         PostQuitMessage(0);

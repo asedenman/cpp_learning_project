@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Problems">
+      <UniqueIdentifier>{6affd746-4221-46f4-bb8c-33b1d3cc6346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Problems">
+      <UniqueIdentifier>{62929a9e-5d7f-46a5-a3ec-389a80d05c9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -27,6 +33,27 @@
     <ClInclude Include="ProjectEuler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WindowBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProblemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProblemWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Prob15.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Prob2.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Prob233.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
+    <ClInclude Include="Prob_base.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -34,6 +61,24 @@
     </ClCompile>
     <ClCompile Include="ProjectEuler.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProblemManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProblemWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob15.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob2.cpp">
+      <Filter>Source Files\Problems</Filter>
+    </ClCompile>
+    <ClCompile Include="Prob233.cpp">
+      <Filter>Source Files\Problems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +91,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="ProjectEuler.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
